@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "sequelize": "node_modules/.bin/sequelize"
+    "sq": "node_modules/.bin/sequelize"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
