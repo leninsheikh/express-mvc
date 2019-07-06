@@ -1,12 +1,19 @@
+import bcrypt from 'bcrypt';
 import User  from '@src/database/models/user';
 
 export default {
     async index(req, res) {
-        res.status(200).json(await User.findAll());
+        try {
+            res.status(200).json(await User.findAll());
+        } catch (e) {
+            res.send(e)
+        }
     },
     async store(req, res) {
         try {
-            let user = await User.create(req.body);
+            let user = await User.build(req.body);
+            user.password = await bcrypt.hash(req.body.password, 10);
+            await user.save();
             res.json(user);
         } catch (e) {
             res.json(e);
