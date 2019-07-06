@@ -1,5 +1,8 @@
 
-if (process.env.ENV === 'development')  {
+/*
+* this check only needs for sequelize-cli
+ */
+if (!process.env.ENV)  {
     require('dotenv').config();
 }
 module.exports = {
@@ -10,4 +13,4 @@ module.exports = {
         host: process.env.DATABASE_HOST,
         dialect: process.env.DATABASE_TYPE
     }
-}
+};
