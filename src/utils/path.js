@@ -1,7 +1,7 @@
 import path from "path";
 
 export const root = filePath => {
-    return resolvePath(filePath,)
+    return resolvePath(filePath)
 }
 
 export const views = filePath => {
