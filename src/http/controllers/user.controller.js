@@ -1,7 +1,7 @@
-import bcrypt from 'bcrypt';
-import User  from '@src/database/models/user';
+const  bcrypt = require('bcrypt');
+const  User  = require('@src/database/models/user');
 
-export default {
+module.exports = {
     async index(req, res) {
         try {
             res.status(200).json(await User.findAll());
@@ -19,4 +19,4 @@ export default {
             res.json(e);
         }
     }
-}
+};

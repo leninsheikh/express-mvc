@@ -1,9 +1,9 @@
-import Express from 'express';
-import BodyParser from 'body-parser';
+const Express = require('express');
+const BodyParser = require('body-parser');
 
-import routes from '@src/http/routes';
-import ipLogger from '@src/http/middlewares/ip.middleware';
-import {asset} from '@src/utils/path';
+const routes =  require('@src/http/routes');
+const ipLogger = require('@src/http/middlewares/ip.middleware');
+const  { asset } = require('@src/utils/path');
 
 const app = Express();
 app.use(BodyParser.urlencoded({extended: false}));

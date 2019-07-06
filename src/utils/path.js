@@ -1,21 +1,21 @@
-import path from "path";
+const  path = require("path");
 
-export const root = filePath => {
+module.exports.root = filePath => {
     return resolvePath(filePath)
 }
 
-export const views = filePath => {
+module.exports.views = filePath => {
     return resolvePath(filePath, 'src/resources/views')
 }
 
-export const src = filePath => {
+module.exports.src = filePath => {
     return resolvePath(filePath, 'src')
 }
-export const asset = (filePath = '') => {
+module.exports.asset = (filePath = '') => {
     return resolvePath(filePath, 'src/resources/assets')
 }
 
-export const html = filePath => {
+module.exports.html = filePath => {
     if(!filePath.includes('.html')) {
         filePath = filePath.slice() + '.html'
     }

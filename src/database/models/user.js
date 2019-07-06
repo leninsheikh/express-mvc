@@ -1,5 +1,5 @@
-import sequelize from '@src/database/connection';
-import * as Sequelize from 'sequelize';
+const  sequelize = require('@src/database/connection');
+const  Sequelize = require('sequelize');
 
 const User = sequelize.define('user', {
     firstName: {
@@ -20,4 +20,4 @@ const User = sequelize.define('user', {
     }
   }, {});
 
-export default User;
+module.exports =  User;
