@@ -1,6 +1,6 @@
 
 /*
-* this check only needs for sequelize-cli
+ * this check only needs for sequelize-cli
  */
 if (!process.env.ENV)  {
     require('dotenv').config();
