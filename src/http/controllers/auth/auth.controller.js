@@ -44,5 +44,15 @@ module.exports = {
         } catch (e) {
             res.json(e);
         }
+    },
+
+    /**
+     * get authenticated user details
+     * @param req
+     * @param res
+     * @returns {Promise<*|createServer.NextHandleFunction|Json|Response|Promise<any>>}
+     */
+    async user(req, res) {
+        return res.status(200).json(req.user)
     }
 };
