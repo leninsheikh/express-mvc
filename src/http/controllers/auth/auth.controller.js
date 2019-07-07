@@ -22,5 +22,15 @@ module.exports = {
         } catch (e) {
             res.status(400).send('error' + e,)
         }
+    },
+    async register(req, res) {
+        try {
+            let user = await User.build(req.body);
+            user.password = await bcrypt.hash(req.body.password, 10);
+            await user.save();
+            res.json(user);
+        } catch (e) {
+            res.json(e);
+        }
     }
 };
