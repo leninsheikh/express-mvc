@@ -3,6 +3,12 @@ const User = require('@src/database/models/user');
 const bcrypt = require('bcrypt');
 
 module.exports = {
+    /**
+     * login user
+     * @param req
+     * @param res
+     * @returns {Promise<*|createServer.NextHandleFunction|Json|Response|Promise<any>|*>}
+     */
     async login(req, res) {
         let {email, password} = req.body;
 
@@ -23,6 +29,12 @@ module.exports = {
             res.status(400).send('error' + e,)
         }
     },
+    /**
+     * user registration
+     * @param req
+     * @param res
+     * @returns {Promise<void>}
+     */
     async register(req, res) {
         try {
             let user = await User.build(req.body);
