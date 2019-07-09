@@ -5,7 +5,7 @@ module.exports = {
      * get user list
      * @param req
      * @param res
-     * @returns {Promise<void>}
+     * @returns User[]
      */
     async index(req, res) {
         try {

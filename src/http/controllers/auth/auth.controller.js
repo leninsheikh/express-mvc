@@ -33,7 +33,7 @@ module.exports = {
      * user registration
      * @param req
      * @param res
-     * @returns {Promise<void>}
+     * @returns {Promise<User> | error}
      */
     async register(req, res) {
         try {
@@ -50,7 +50,7 @@ module.exports = {
      * get authenticated user details
      * @param req
      * @param res
-     * @returns {Promise<*|createServer.NextHandleFunction|Json|Response|Promise<any>>}
+     * @returns {Promise<*|createServer.NextHandleFunction|Json|Response|Promise<User>>}
      */
     async user(req, res) {
         return res.status(200).json(req.user)

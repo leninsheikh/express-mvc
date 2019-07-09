@@ -9,7 +9,14 @@ const router = Express.Router();
 router.post('/login', validate(loginRequest), authController.login);
 router.post('/register', validate(registerRequest), authController.register);
 
+/**
+ * added passport middleware
+ */
 router.use(passport.authenticate('jwt', { session: false }));
+
+/**
+ * protected routes
+ */
 router.get('/user', authController.user);
 
 module.exports = router;

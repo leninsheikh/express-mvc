@@ -17,7 +17,7 @@ module.exports = passport.use(new JwtStrategy(opts, async (jwt_payload, done) =>
         if (user) {
             return done(null, user)
         }
-        return done(null, true)
+        return done(null, false)
     } catch (e) {
         return e;
     }
