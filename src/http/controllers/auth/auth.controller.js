@@ -33,7 +33,7 @@ module.exports = {
      * user registration
      * @param req
      * @param res
-     * @returns {Promise<User> | error}
+     * @returns {Promise<User> | JSON | Response}
      */
     async register(req, res) {
         try {
