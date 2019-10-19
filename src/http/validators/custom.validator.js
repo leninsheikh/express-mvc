@@ -21,9 +21,7 @@ module.exports.isPasswordEqual = (value, {req}) => {
 module.exports.isUniqueEmail = async (value, {req}) => {
     let user = await User.count({where: {email: value}});
     if (user > 0) {
-        if (value !== req.body.password) {
-            throw new Error(value + ' email is already taken');
-        }
-        return true;
+         throw new Error(value + ' email is already taken');
     }
+    return true;
 };
