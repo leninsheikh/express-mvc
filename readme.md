@@ -19,9 +19,7 @@ yarn start
 ##
 #### Api Documentation
 ```
-visit
 https://documenter.getpostman.com/view/2774810/SVtbPQmN?version=latest
-for postman API documentation
 ```
 
 
