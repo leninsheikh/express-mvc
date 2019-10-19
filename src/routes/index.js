@@ -11,6 +11,12 @@ const user = require('./api/user.route');
  * @type {Router}
  */
 const router = Express.Router();
+
+//home
+router.get('/', (req, res) => {
+    res.render('welcome');
+});
+
 router.use('/auth', auth);
 router.use('/admin', admin);
 router.get('/mail', mailController.sendEmail);
